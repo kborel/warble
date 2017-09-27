@@ -17,5 +17,8 @@ export default styled.input`
 
   &:focus {
     border-color: lightblue;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
   } 
 `;
