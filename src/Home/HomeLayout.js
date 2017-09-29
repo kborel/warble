@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  max-width: 900px;
   height: 900px;
-  margin: 0 auto;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 900px) {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    grid-template-columns: 300px 600px;
     grid-template-rows: auto auto auto auto;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -18,8 +17,7 @@ export default styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    max-width: 1200px;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 300px 600px 300px;
     grid-template-rows: repeat(auto, 4);
     grid-template-areas:
       "profile timeline follow"
