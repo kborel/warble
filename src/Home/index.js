@@ -8,15 +8,17 @@ import WhoToFollow from './WhoToFollow';
 
 class Home extends Component {
   render() {
-    return [
-        <Nav key='nav' />,
+    return (
+      <React.Fragment>
+        {/* <Nav key='nav' /> */}
         <HomeLayout key='main'>
           <Timeline />
-          <ProfileCard />
+          {/* <ProfileCard />
           <Trends />
-          <WhoToFollow />
+          <WhoToFollow /> */}
         </HomeLayout>
-    ];
+      </React.Fragment>
+    );
   }
 }
 
