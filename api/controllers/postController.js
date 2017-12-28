@@ -5,3 +5,8 @@ exports.addPost = async (req, res) => {
   res.json(post);
 };
 
+exports.getPosts = async (req, res) => {
+  const posts = await Post.query();
+  res.json(posts);
+};
+
