@@ -6,7 +6,12 @@ import App from './App';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+  , document.getElementById('root')
+);
 
 if(module.hot) {
   module.hot.accept('./App', () => {
