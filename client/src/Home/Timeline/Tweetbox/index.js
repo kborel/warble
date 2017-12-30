@@ -19,6 +19,13 @@ class Tweetbox extends Component {
     });
   }
 
+  onSubmit = () => {
+    this.props.submitPost(this.state.text);
+    this.setState({
+      text: '',
+    });
+  }
+
   render() {
     const { text } = this.state;
     return (
@@ -33,7 +40,7 @@ class Tweetbox extends Component {
         <LetterCount>{text.length}</LetterCount>
         <Button 
           disabled={text.length < 1 || text.length > 280}
-          onClick={() => this.props.submitPost(text)}
+          onClick={this.onSubmit}
         >
           Post
         </Button>
