@@ -31,7 +31,12 @@ class Tweetbox extends Component {
           rows="3"
         />
         <LetterCount>{text.length}</LetterCount>
-        <Button disabled={text < 1}>Post</Button>
+        <Button 
+          disabled={text.length < 1 || text.length > 280}
+          onClick={() => this.props.submitPost(text)}
+        >
+          Post
+        </Button>
       </TweetboxComponent>
     );
   }
