@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TweetboxComponent from './TweetboxComponent';
 import Input from './Input';
 import Button from './Button';
 import CharacterCount from './CharacterCount';
+
+const propTypes = {
+  submitPost: PropTypes.func.isRequired,
+};
 
 class Tweetbox extends Component {
   constructor(props) {
@@ -51,5 +56,7 @@ class Tweetbox extends Component {
     );
   }
 }
+
+Tweetbox.propTypes = propTypes;
 
 export default Tweetbox;
