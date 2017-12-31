@@ -5,10 +5,6 @@ class Post extends Model {
     return 'posts';
   }
 
-  text() {
-    return this.text;
-  }
-
   static get jsonSchema() {
     return {
       type: 'object',
