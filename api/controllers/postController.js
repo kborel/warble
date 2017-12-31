@@ -10,3 +10,8 @@ exports.getPosts = async (req, res) => {
   res.json(posts);
 };
 
+exports.getPost = async (req, res, next) => {
+  const post = await Post.query().findById(req.params.id);
+  return !post ? next() : res.json(post);
+};
+
