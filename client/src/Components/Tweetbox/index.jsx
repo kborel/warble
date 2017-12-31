@@ -2,24 +2,27 @@ import React, { Component } from 'react';
 import TweetboxComponent from './TweetboxComponent';
 import Input from './Input';
 import Button from './Button';
-import LetterCount from './LetterCount';
+import CharacterCount from './CharacterCount';
 
 class Tweetbox extends Component {
   constructor(props) {
     super(props);
 
-    this.state= {
+    this.state = {
       text: '',
     };
+
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onInputChange = ({ target }) => {
+  onInputChange({ target }) {
     this.setState({
       text: target.value,
     });
   }
 
-  onSubmit = () => {
+  onSubmit() {
     this.props.submitPost(this.state.text);
     this.setState({
       text: '',
@@ -37,8 +40,8 @@ class Tweetbox extends Component {
           onChange={this.onInputChange}
           rows="3"
         />
-        <LetterCount>{text.length}</LetterCount>
-        <Button 
+        <CharacterCount>{text.length}</CharacterCount>
+        <Button
           disabled={text.length < 1 || text.length > 280}
           onClick={this.onSubmit}
         >

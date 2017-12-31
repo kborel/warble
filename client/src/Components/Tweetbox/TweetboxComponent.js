@@ -8,4 +8,5 @@ export default styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  grid-area: tweetbox;
 `;
