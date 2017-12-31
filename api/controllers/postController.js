@@ -1,8 +1,11 @@
 const Post = require('../models/Post');
+const config = require('../config.json');
+
+const type = 'posts';
 
 exports.addPost = async (req, res) => {
   const post = await Post.query().insert(req.body);
-  res.json(post);
+  res.status(201).location(`${config.apiRoot}/${type}/${post.id}`).json(post);
 };
 
 exports.getPosts = async (req, res) => {
