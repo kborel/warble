@@ -2,19 +2,19 @@ const { Model } = require('objection');
 
 class Post extends Model {
   static get tableName() {
-    return 'Posts';
+    return 'posts';
   }
 
-  post() {
-    return this.post;
+  text() {
+    return this.text;
   }
 
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['post'],
+      required: ['text'],
       properties: {
-        post: { type: 'string', minLength: 1, maxLength: 280 },
+        text: { type: 'string', minLength: 1, maxLength: 280 },
       },
     };
   }
