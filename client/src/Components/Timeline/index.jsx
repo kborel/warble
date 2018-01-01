@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../../Components/Section';
+import Section from '../Section';
 
 const Timeline = () => (
   <Section area="timeline" />
