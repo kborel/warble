@@ -1,7 +1,7 @@
-import { POST_SUBMITTED } from '../Actions/postActions';
-
+import { POST_SUBMITTED, FETCH_POSTS_SUCCESS } from '../Actions/postActions';
 
 export default function posts(state = {}, action) {
+  const newState = {};
   switch (action.type) {
     case POST_SUBMITTED:
       return {
@@ -10,6 +10,13 @@ export default function posts(state = {}, action) {
           ...action.payload,
         },
       };
+    case FETCH_POSTS_SUCCESS:
+      action.payload.forEach(post => Object.assign(newState, {
+        [post.id]: {
+          ...post,
+        },
+      }));
+      return newState;
     default:
       return state;
   }
