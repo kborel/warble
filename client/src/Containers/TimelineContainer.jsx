@@ -5,30 +5,30 @@ import { getPosts } from '../Reducers/postsReducer';
 import Timeline from '../Components/Timeline';
 import { fetchPosts } from '../Actions/postActions';
 
-const propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-  })).isRequired,
-  fetchPosts: PropTypes.func.isRequired,
+const withFetchPosts = (WrappedComponent) => {
+  const propTypes = {
+    fetchPosts: PropTypes.func.isRequired,
+  };
+
+  class WithFetchPosts extends Component {
+    componentDidMount() {
+      this.props.fetchPosts();
+    }
+
+    render() {
+      return (
+        <WrappedComponent {...this.props} />
+      );
+    }
+  }
+
+  WithFetchPosts.propTypes = propTypes;
+
+  return WithFetchPosts;
 };
-
-class TimelineContainer extends Component {
-  componentDidMount() {
-    this.props.fetchPosts();
-  }
-
-  render() {
-    return (
-      <Timeline posts={this.props.posts} />
-    );
-  }
-}
-
-TimelineContainer.propTypes = propTypes;
 
 const mapStateToProps = state => ({
   posts: getPosts(state),
 });
 
-export default connect(mapStateToProps, { fetchPosts })(TimelineContainer);
+export default connect(mapStateToProps, { fetchPosts })(withFetchPosts(Timeline));
