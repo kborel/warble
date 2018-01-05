@@ -1,9 +1,10 @@
 const Knex = require('knex');
 const { Model } = require('objection');
-const app = require('./app');
 const knexConfig = require('./knexfile');
 
 require('dotenv').config();
+
+const app = require('./app');
 
 const knex = Knex(knexConfig);
 
