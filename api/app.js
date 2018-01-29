@@ -8,7 +8,13 @@ require('./handlers/passport');
 
 const app = express();
 
-app.use(cors());
+const config = {
+  origin: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  exposedHeaders: 'Authorization',
+};
+
+app.use(cors(config));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

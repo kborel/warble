@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon Server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -18,8 +19,12 @@
     "objection": "^0.9.4",
     "objection-password": "^0.2.0",
     "objection-unique": "^0.2.1",
+    "objection-visibility": "^0.2.0",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
     "pg": "^7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
   }
 }

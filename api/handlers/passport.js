@@ -7,7 +7,7 @@ passport.use(new JwtStrategy({
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 }, async (jwtPayload, done) => {
   try {
-    const user = User.query().findById(jwtPayload.id);
+    const user = await User.query().findById(jwtPayload.id);
     return user ? done(null, user) : done(null, false);
   } catch (err) {
     return done(err, false);
