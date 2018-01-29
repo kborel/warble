@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Input from './Input';
-import Button from './Button';
+import Input from '../Input';
+import Button from '../Button';
 
 class SignupForm extends Component {
   render() {
@@ -9,7 +9,7 @@ class SignupForm extends Component {
         <Input type='text' placeholder='Full name'/>
         <Input type='text' placeholder='Email'/>
         <Input type='password' placeholder='Password'/>
-        <Button type='submit' value='Sign Up'/>
+        <Button>Sign Up</Button>
       </form>
     );
   }

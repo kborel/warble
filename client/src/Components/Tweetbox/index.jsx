@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TweetboxComponent from './TweetboxComponent';
+import TweetForm from './TweetForm';
 import Input from './Input';
-import Button from './Button';
+import Button from '../Button';
 import CharacterCount from './CharacterCount';
 
 const propTypes = {
@@ -37,13 +37,12 @@ class Tweetbox extends Component {
   render() {
     const { text } = this.state;
     return (
-      <TweetboxComponent>
+      <TweetForm>
         <Input
           minRows={3}
           placeholder="What's happening?"
           value={this.state.text}
           onChange={this.onInputChange}
-          rows="3"
         />
         <CharacterCount>{text.length}</CharacterCount>
         <Button
@@ -52,7 +51,7 @@ class Tweetbox extends Component {
         >
           Post
         </Button>
-      </TweetboxComponent>
+      </TweetForm>
     );
   }
 }

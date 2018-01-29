@@ -1,13 +1,13 @@
 import React from 'react';
-import Layout from './Layout';
+import Container from '../Container';
 import TimelineContainer from '../../Containers/TimelineContainer';
 import TweetboxContainer from '../../Containers/TweetboxContainer';
 
 const Home = () => (
-  <Layout key="main">
+  <Container width="600px">
     <TweetboxContainer />
     <TimelineContainer />
-  </Layout>
+  </Container>
 );
 
 export default Home;

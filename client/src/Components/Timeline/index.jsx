@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Section from '../Section';
 
 const propTypes = {
   posts: PropTypes.arrayOf(PropTypes.shape({
@@ -10,13 +9,13 @@ const propTypes = {
 };
 
 const Timeline = ({ posts }) => (
-  <Section area="timeline">
+  <div>
     {
       posts.length !== 0 ? posts.map(post =>
         <div key={post.id} >id: {post.id} text: {post.text}</div>)
       : 'no posts yet'
     }
-  </Section>
+  </div>
 );
 
 Timeline.propTypes = propTypes;
